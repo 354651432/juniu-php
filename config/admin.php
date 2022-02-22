@@ -87,7 +87,7 @@ return [
     | If your page is going to be accessed via https, set it to `true`.
     |
     */
-    'https' => $_SERVER["HTTP_HTTPSED"] ??false,
+    'https' => $_SERVER["HTTP_HTTPSED"] ?? false,
 
     /*
     |--------------------------------------------------------------------------
@@ -108,7 +108,7 @@ return [
 
         'guards' => [
             'admin' => [
-                'driver'   => 'session',
+                'driver' => 'session',
                 'provider' => 'admin',
             ],
         ],
@@ -116,7 +116,7 @@ return [
         'providers' => [
             'admin' => [
                 'driver' => 'eloquent',
-                'model'  => Encore\Admin\Models\Administrator::class,
+                'model' => Encore\Admin\Models\Administrator::class,
             ],
         ],
 
@@ -156,12 +156,12 @@ return [
     'upload' => [
 
         // Disk in `config/filesystem.php`.
-        'disk' => 'public',
+        'disk' => 'admin',
 
         // Image and file upload path under the disk above.
         'directory' => [
             'image' => 'images',
-            'file'  => 'files',
+            'file' => 'files',
         ],
     ],
 

@@ -17,4 +17,4 @@
  * Admin::js('/packages/prettydocs/js/main.js');
  *
  */
-
+Encore\Admin\Form::extend('nestedEmbeds', \App\Admin\Extensions\NestedEmbeds::class);

@@ -46,6 +46,7 @@ class ArticleController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('text', __('Text'));
+        $show->field('imgs');
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -61,10 +62,12 @@ class ArticleController extends AdminController
     {
         $form = new Form(new Article());
 
-        $form->text('text', __('Text'));
-	$form->hasMany('images', function(Form\NestedForm $form){
-		$form->image('url');
-	});
+        $form->textarea('text', __('Text'))->required();
+//        $form->multipleImage('imgs')->sortable();
+        $form->hasMany("images", function (Form\NestedForm $form1) {
+            $form1->image("url");
+            $form1->text("desc");
+        });
 
         return $form;
     }
